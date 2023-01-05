@@ -35,6 +35,7 @@ for(let i in menuLinks){
         a.setAttribute('link','menuLinks[i].subLinks');
         
     }
+    
     topMenuEl.appendChild(a);
 }
 
@@ -122,11 +123,15 @@ subMenuEl.addEventListener('click',function(e){
     //        }
     
         mainEl.innerHTML = `<h1>${e.target.text}</h1>`;
-        
-    
-    
-        
-  
-  });
+})
+
+topMenuEl.addEventListener('click', function(e) {
+  e.preventDefault();
+  if(e.target.text == 'about') {
+    mainEl.innerHTML = `<h1>${e.target.text}</h1>`;
+  }
+});
+
+
     
 
